@@ -32,7 +32,7 @@ export const Grid3 = ({children, className} : {children?: React.ReactNode, class
 
 export const Grid4 = ({children, className} : {children?: React.ReactNode, className?: string}) => {
   return (
-    <div className={`col-span-3${className}`}>
+    <div className={`col-span-3 ${className}`}>
       {children}
     </div>
   )
