@@ -1,38 +1,38 @@
-export const Grid = ({children} : {children: React.ReactNode}) => {
+export const Grid = ({children, className} : {children: React.ReactNode, className?: string}) => {
   return (
-    <div className="grid grid-cols-12 gap-4">
+    <div className={`grid grid-cols-12 gap-4 ${className}`}>
       {children}
     </div>
   )
 }
 
-export const Grid1 = ({children} : {children?: React.ReactNode}) => {
+export const Grid1 = ({children, className} : {children?: React.ReactNode, className?: string}) => {
   return (
-    <div className="col-span-12">
+    <div className={`col-span-12 ${className}`}>
       {children}
     </div>
   )
 }
 
-export const Grid2 = ({children} : {children?: React.ReactNode}) => {
+export const Grid2 = ({children, className} : {children?: React.ReactNode, className?: string}) => {
   return (
-    <div className="col-span-6">
+    <div className={`col-span-6 ${className}`}>
       {children}
     </div>
   )
 }
 
-export const Grid3 = ({children} : {children?: React.ReactNode}) => {
+export const Grid3 = ({children, className} : {children?: React.ReactNode, className?: string}) => {
   return (
-    <div className="col-span-4">
+    <div className={`col-span-4 ${className}`}>
       {children}
     </div>
   )
 }
 
-export const Grid4 = ({children} : {children?: React.ReactNode}) => {
+export const Grid4 = ({children, className} : {children?: React.ReactNode, className?: string}) => {
   return (
-    <div className="col-span-3">
+    <div className={`col-span-3${className}`}>
       {children}
     </div>
   )
