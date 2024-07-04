@@ -16,14 +16,42 @@ const Page = () => {
         data: views,
       }
     ]
-  }
+  };
+  const options = {
+    responsive: true,
+    maintainAspectRatio: false
+  };
+
   return (
-    <Grid>
-      <Grid1>
-        <Line
-          data={viewsData}
-          className="w-screen h-[50vh]"
-        />
+    <Grid className="h-screen">
+      <Grid1 className="grid">
+        <div className="max-h-[50vh]">
+          <h1 className="text-center">Views</h1>
+          <Line
+            data={viewsData}
+            options={options}
+          />
+        </div>
+        <Grid>
+          <Grid2>
+            <div className="max-h-[50vh]">
+              <h1 className="text-center">Views</h1>
+              <Line
+                data={viewsData}
+                options={options}
+              />
+            </div>
+          </Grid2>
+          <Grid2>
+            <div className="max-h-[50vh]">
+              <h1 className="text-center">Views</h1>
+              <Line
+                data={viewsData}
+                options={options}
+              />
+            </div>
+          </Grid2>
+        </Grid>
       </Grid1>
     </Grid>
   )
