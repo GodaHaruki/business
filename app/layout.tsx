@@ -1,6 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import { Grid } from './components/Grid'
+import Link from 'next/link'
+import { ChartIcon, CreditIcon, ServerIcon, UserIcon } from './components/Icons'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +17,32 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const sidemenus = [
+    { href: "/account", icon: <UserIcon />, text: "Account" },
+    { href: "/analytics", icon: <ChartIcon />, text: "Analytics" },
+    { href: "/payment", icon: <CreditIcon />, text: "Payment" },
+    { href: "/settings", icon: <ServerIcon />, text: "Settings" },
+  ];
+
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Grid>
+          <div className="col-span-12 md:col-span-2 grid grid-cols-12 md:grid-cols-1 border-b md:border-b-0 h-fit w-full md:w-fit mx-auto">
+            {sidemenus.map(menu => {
+              return (
+                <Link href={menu.href} className="flex mb-2 last:mb-0 col-span-3 md:col-span-1 gap-4">
+                  {menu.icon}
+                  <p className="ml-2">{menu.text}</p>
+                </Link>
+              )
+            })}
+          </div>
+          <div className="col-span-12 md:col-span-10 md:border-l min-h-screen">
+            {children}
+          </div>
+        </Grid>
+      </body>
     </html>
   )
 }
