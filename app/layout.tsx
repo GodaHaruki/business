@@ -31,7 +31,7 @@ export default function RootLayout({
           <div className="col-span-12 md:col-span-2 grid grid-cols-12 md:grid-cols-1 border-b md:border-b-0 h-fit w-full md:w-fit mx-auto">
             {sidemenus.map(menu => {
               return (
-                <Link href={menu.href} className="flex mb-2 last:mb-0 col-span-3 md:col-span-1 gap-4">
+                <Link href={menu.href} className="flex mb-2 last:mb-0 col-span-3 md:col-span-1 gap-4" key={menu.text}>
                   {menu.icon}
                   <p className="ml-2">{menu.text}</p>
                 </Link>
