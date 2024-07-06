@@ -26,9 +26,9 @@ const Page = () => {
         </ResponsiveContainer>
       </Grid1>
       {
-        [...Array(3)].map(_ => {
+        [...Array(3)].map((_, i) => {
           return (
-            <Grid3 className="h-[40vh]">
+            <Grid3 className="h-[40vh]" key={i}>
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart width={500} height={500} data={sampleData}>
                   <Line type="monotone" dataKey="num" />
