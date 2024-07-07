@@ -40,7 +40,7 @@ export default function RootLayout({
               )
             })}
           </div>
-          <div className="col-span-12 md:col-span-10 md:border-l border-neutral-content">
+          <div className="col-span-12 md:col-span-10 md:border-l border-neutral-content md:min-h-screen">
             {children}
           </div>
         </Grid>
